@@ -17,7 +17,7 @@ jobs:
         run: zip -r deploy.zip . -x '*.git*'
  
       - name: Deploy to EB
-        uses: einaregilsson/beanstalk-deploy@v18
+        uses: einaregilsson/beanstalk-deploy@v20
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
@@ -25,5 +25,5 @@ jobs:
           environment_name: Dockerreact-env
           existing_bucket_name: elasticbeanstalk-us-west-2-862189173676
           region: us-west-2
-          version_label: ${{ github.sha }}
+          version_label: 0d13538dc4448ce8db9e7a016230a1994d739e68
           deployment_package: deploy.zip
